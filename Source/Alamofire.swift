@@ -22,6 +22,9 @@
 //  THE SOFTWARE.
 //
 
+/// yiqi @discardableResult 忽略返回结果
+/// yiqi 所有请求都调用 SessionManager.default.xxx, 返回都是xxRequest对象，Alamofire 链式（chain）写法
+
 import Foundation
 
 /// Types adopting the `URLConvertible` protocol can be used to construct URLs, which are then used to construct

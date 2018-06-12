@@ -87,8 +87,10 @@ open class Request {
     // MARK: Properties
 
     /// The delegate for the underlying task.
+    // yiqi internal 作为模块内部使用，模块外不能访问
     open internal(set) var delegate: TaskDelegate {
         get {
+            // yiqi defer会在当前声明的作用域结束时候执行 优先级：局部优先，同级自下而上
             taskDelegateLock.lock() ; defer { taskDelegateLock.unlock() }
             return taskDelegate
         }
